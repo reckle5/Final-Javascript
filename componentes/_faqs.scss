@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{   
+    font-family: 'Roboto', sans-serif;
+  }
+
+.faqs{
+    width: 100%;
+    height: max-content;
+    background-image: linear-gradient( 64.3deg,  rgba(254,122,152,0.81) 17.7%, rgba(255,206,134,1) 64.7%, rgba(172,253,163,0.64) 112.1% );
+
+   &__h1{   
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    line-height: 100px;
+    padding-top: 10rem;
+   }
+
+   &__ul{   
+    font-size: 20px;
+   }
+
+   &__p1, &__p2, &__p3{
+      @extend .QandA;
+   }
+}
+
+.preguntas{
+    text-align: center;
+
+   &__1{
+       font-weight: bold;
+       padding-top: 1.5rem;
+   }
+
+   &__2{
+       padding-bottom: 3rem;
+   }
+}
+
+.escala{
+    transition: all 3s;
+}
+
+.escala a:hover{
+    transform: scale(0.85);
+    color: rgb(73, 41, 52);
+}

@@ -1,0 +1,11 @@
+
+.redesInsta, .redesFace{
+    color: antiquewhite;
+    @include tamaño(50px,40px);
+}
+
+.visa, .amex, .mast{
+    @extend .tarjetafooter;
+}
+
+

@@ -1,0 +1,47 @@
+@mixin tamaño($width, $height){
+    width: $width;
+    height: $height;
+}
+@mixin areap($area, $pos){
+    grid-area: $area;
+    position: $pos;
+}
+
+.tarjetafooter{
+    width: 50px;
+    border-radius: 5px;
+}
+
+.QandA{
+    color:white;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    background-color: rgba(179, 13, 13, 0.205);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 4rem 10rem 1rem 10rem ;
+    padding-top: 1rem;
+}
+
+$redes:(
+    instagram:#5e0659,
+    facebook:#1a48df,
+);
+
+.formPlaceholder{
+    padding: 8px;
+    margin-top: 10px;
+    border:1px rgb(240, 144, 88) solid;
+    border-radius: 6px;
+    background-color: beige;
+    padding-bottom: 5px;
+    width: 60%;
+}
+
+@mixin grillaProd($area, $row){
+    grid-area: $area;
+    grid-template-rows: $row;
+}

@@ -1,0 +1,235 @@
+@media screen and (max-width:1300px){
+    .carousel-item{
+        height: 30rem;
+    }
+    .main1{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30% 50%;
+        padding-top: 2rem;
+        grid-template-areas: "titulo titulo"
+        "texto imagen";
+        column-gap: 2rem;
+        row-gap: 3rem;
+    }
+.main2__grilla{
+    margin: 2rem;
+    
+}
+
+}
+
+
+@media screen and (max-width:1024px){
+    /*header*/
+        .navEnlace{
+            font-weight: bold;
+            font-size: 16px;
+            margin-left: 2rem;
+        }
+    
+        .navSearch{
+            height: 30px;
+          padding-left: 0;
+            width: 20rem;
+           
+        }
+        .hamburg{
+            margin-right: 2rem;
+        }
+            .header{
+    
+                &__logo{
+                    margin-left: 1rem;
+                }
+            }
+    
+        
+        /*index*/
+        .carousel-item{
+            height: 50rem;
+        }
+        .main1{
+            grid-template-columns: 1fr;
+            grid-template-rows: 15% 60% 40%;
+            grid-template-areas: "titulo"
+            "imagen"
+            "texto";
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            height: auto;
+            padding-top: 3rem;
+            
+         &__titulo{
+          font-size: 22px;
+         }
+         &__parrafo{
+            font-size: 22px;
+            margin-top: 2rem;
+    
+         }
+    
+         &__carousel{
+            position: relative;
+            left: 0;
+            margin-top: 3rem;
+            }
+    }
+        .main2 {
+        
+        &__titulo{
+            width: auto;
+            height: auto;   
+        }
+    
+        &__grilla{
+            display: grid;
+            grid-template-columns: repeat(3,33.3%);
+            grid-template-rows: auto;
+            grid-template-areas: "m1 m2 m3"
+            "m4 m4 m5"
+            "m4 m4 m6"
+            "m7 m8 m9";
+            gap: 5px;
+            margin: 2rem 2rem ;
+            justify-content: center;
+        }
+    }
+    
+        /*contacto*/
+    
+       
+        .pagecontacto{
+            font-size: 22px;
+        }
+    
+        #nombre1, #mail2, #tipo, #comentarios{
+            width: 70%
+        }
+    
+       .form__name{
+           font-size: 19px;
+       }
+    
+       .mapa__gps{
+           width: 85%;
+       }
+       
+    /*productos*/
+    .sel{
+        font-size: 18px;
+        color: black;
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .breadC{
+        margin-top: 8rem;
+        
+      }
+    .prods{
+    
+        &__bannerPic{
+            @include tamaño(100%,140px);
+        }
+    
+        &__h1{
+            margin-top: 1rem;
+           padding: 0.5rem 3rem
+        }
+    }
+    
+    .prodGrilla{
+        display: grid;
+        grid-template-columns: repeat(3, 33.3%);
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas: "m11 m4 m8"
+        "m5 m7 m12 "
+        "m9 m2 m3"
+        "m1 m6 m10"
+        "m13 m14 m15"
+        "m16 m17 m18"
+        "m19 m20 m21";
+        row-gap: 20px;
+        column-gap: 10px;
+        margin-bottom: 1rem;
+        justify-content: center;
+      
+        &__m1, &__m2, &__m3, &__m4, &__m5, &__m6, &__m7, &__m8, &__m9, &__m10, &__m11, &__m12, &__m13, &__m14, &__m15, &__m16, &__m17, &__m18, &__m19, &__m20, &__m21{
+            @include tamaño(100%,80%);
+          }
+          
+          p{
+              font-size: 14px;
+          }
+    
+    }
+    /*Macetas*/
+    .macetaGrilla{
+        display: grid;
+        grid-template-columns: repeat(3,33.3%);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "m1 m2 m3"
+        "m4 m5 m6"
+        "m7 m8 m9"
+        "m10 m11 m12";
+        row-gap: 20px;
+        column-gap: 10px;
+        margin-bottom: 1rem;
+        justify-content: center;
+    
+        &__m1, &__m2, &__m3, &__m4, &__m5, &__m6, &__m7, &__m8, &__m9, &__m10, &__m11, &__m12{
+            @include tamaño(100%,80%);
+        }
+    p{
+        font-size: 14px;
+    }
+    }
+      /*Almohadones*/ 
+      .almoGrilla{
+        display: grid;
+        grid-template-columns: repeat(3,33.3%);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: "a1 a2 a3"
+        "a4 a5 a6"
+        "a7 a8 a9";
+        row-gap: 20px;
+        column-gap: 10px;
+        margin-bottom: 1rem;
+        justify-content: center;
+    
+        &__a1, &__a2, &__a3, &__a4, &__a5, &__a6, &__a7, &__a8, &__a9{
+            @include tamaño(100%, 80%);
+          }
+          p{
+              font-size: 14px;
+          }
+        }
+    /*Nosotras*/
+    
+    .us{
+        margin:0%;
+        
+        &__p{
+            margin: 0%;
+        }
+    }
+    
+    
+    /*faqs*/
+
+    .faqs__h1{
+        padding-top: 2rem;
+    }
+    
+    .preguntas{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    .faqs__p1, .faqs__p2, .faqs__p3{
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+    
+    }
+    

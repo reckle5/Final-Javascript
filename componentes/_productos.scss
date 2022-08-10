@@ -1,0 +1,322 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: 'Roboto', sans-serif;
+  }
+/* PAGINA DE PRODUCTOS*/
+.prods{
+  &__banner{
+    height: fit-content;
+  }
+
+  &__bannerPic{
+    @include tamaño(100%,150px);
+    margin-top: 2rem;
+  }
+
+    &__h1{
+        display: inline-block;
+        text-align: center;
+        background-color: rgba(72, 165, 122, 0.904);
+        padding: 1rem;
+        color: bisque;
+        border-radius: 2rem;
+    }
+}
+
+.sel{
+  font-size: 20px;
+  color: black;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prodGrilla{
+  display: grid;
+  grid-template-columns: repeat(4, 30%);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas: "m11 m4 m8 m5"
+  "m7 m12 m9 m2 "
+  "m3 m1 m6 m10"
+  "m13 m14 m15 m16"
+  "m17 m18 m19 m20 "
+  "m21 . . . ";
+  row-gap: 50px;
+  column-gap: 10px;
+  margin-bottom: 5rem;
+  justify-content: center;
+
+&__1{
+ grid-area: m1;
+
+}
+
+&__2{
+grid-area: m2;
+}
+
+&__3{
+grid-area: m3;
+}
+
+&__4{
+grid-area: m4;
+}
+
+&__5{
+grid-area: m5;
+}
+
+&__6{
+grid-area: m6;
+}
+
+&__7{
+grid-area: m7;
+}
+
+&__8{
+  grid-area:m8 ;
+}
+
+&__9{
+ grid-area: m9;
+}
+
+&__10{
+  grid-area: m10;
+ }
+
+ &__11{
+  grid-area: m11;
+ }
+
+ &__12{
+  grid-area: m12;
+ }
+&__13{
+  grid-area: m13;
+}
+&__14{
+  grid-area: m14;
+}
+&__15{
+  grid-area: m15;
+}
+&__16{
+  grid-area: m16;
+}
+&__17{
+  grid-area: m17;
+}
+&__18{
+  grid-area: m18;
+}
+&__19{
+  grid-area: m19;
+}
+&__20{
+  grid-area: m20;
+}
+&__21{
+  grid-area: m21;
+}
+
+
+&__m1, &__m2, &__m3, &__m4, &__m5, &__m6, &__m7, &__m8, &__m9, &__m10, &__m11, &__m12, &__m13, &__m14, &__m15, &__m16, &__m17, &__m18, &__m19, &__m20, &__m21  {
+  @include tamaño(90%,85%);
+}
+p{
+ font-family: $fontParrafos;
+ font-size: 18px;
+ color: black;
+ font-weight: 700;
+ padding-top: 10px;
+}
+}
+.price{
+  font-family: $fontParrafos;
+ font-size: 14px;
+ color: black;
+ font-weight: 700;
+}
+
+
+/* PAGINA ALMOHADONES */
+.almoGrilla{
+  display: grid;
+  grid-template-columns: repeat(3,33.3%);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "a1 a2 a3"
+  "a4 a5 a6"
+  "a7 a8 a9";
+  row-gap: 50px;
+  column-gap: 10px;
+  margin-bottom: 5rem;
+  justify-content: center;
+ 
+  &__1{
+    grid-area: a1;
+   
+   }
+   
+   &__2{
+   grid-area: a2;
+   }
+   
+   &__3{
+   grid-area: a3;
+   }
+   
+   &__4{
+   grid-area: a4;
+   }
+   
+   &__5{
+   grid-area: a5;
+   }
+   
+   &__6{
+   grid-area: a6;
+   }
+   
+   &__7{
+   grid-area: a7;
+   }
+   
+   &__8{
+     grid-area:a8 ;
+   }
+   
+   &__9{
+    grid-area: a9;
+   }
+   
+   &__a1, &__a2, &__a3, &__a4, &__a5, &__a6, &__a7, &__a8, &__a9{
+     @include tamaño(100%,85%);
+   }
+   p{
+    font-family: $fontParrafos;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    padding-top: 10px;
+   }
+}
+
+/* PAGINA MACETAS*/
+.breadC{
+  margin-top: 8rem;
+}
+
+.macetaGrilla{
+  display: grid;
+  grid-template-columns: repeat(4,30%);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "m1 m2 m3 m4"
+  "m5 m6 m7 m8"
+  "m9 m10 m11 m12";
+  row-gap: 40px;
+  column-gap: 10px;
+  margin-bottom: 5rem;
+  justify-content: center;
+ 
+  &__1{
+    grid-area: m1;
+   
+   }
+   
+   &__2{
+   grid-area: m2;
+   }
+   
+   &__3{
+   grid-area: m3;
+   }
+   
+   &__4{
+   grid-area: m4;
+   }
+   
+   &__5{
+   grid-area: m5;
+   }
+   
+   &__6{
+   grid-area: m6;
+   }
+   
+   &__7{
+   grid-area: m7;
+   }
+   
+   &__8{
+     grid-area:m8 ;
+   }
+   
+   &__9{
+    grid-area: m9;
+   }
+   
+   &__9{
+     grid-area: m10;
+    }
+   
+    &__9{
+     grid-area: m11;
+    }
+   
+    &__9{
+     grid-area: m12;
+    }
+   &__m1, &__m2, &__m3, &__m4, &__m5, &__m6, &__m7, &__m8, &__m9, &__m10, &__m11, &__m12 {
+     @include tamaño(90%,85%);
+   }
+   p{
+    font-family: $fontParrafos;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    padding-top: 10px;
+   }
+  }
+
+  .carrito-icono{
+    display: flex;
+    flex-direction: row;
+    font-size: 5rem;
+    margin-bottom: 10px;
+    margin-left: 2rem;
+    }
+
+    
+
+    .productos{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+  }
+
+  .img-productos{
+    height: 328px;
+    width: auto;
+    border-radius: 10px;
+}
+
+
+#botonCarrito:hover {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(209, 170, 96);
+}
+#botonCarrito:focus {
+  outline: none;
+}
+

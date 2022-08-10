@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    box-shadow: $boxShadow ;
+
+    &__logo{    
+         display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100px;
+        border-radius: 50px;
+     }
+     
+     &__transf img{
+     transition: transform 2s;
+    }
+
+     &:hover img{
+     transform: translate(200px) rotate(360deg);
+     }
+}
+
+.navSearch{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-left: 2rem;
+    height: 2.2rem;
+}
+
+.navEnlace{
+    font-weight: bold;
+    font-size: 20px;
+}

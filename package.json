@@ -1,0 +1,11 @@
+{
+  "name": "migla-web-master",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass style.scss ./css/style.css -w --no-source-map -s compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

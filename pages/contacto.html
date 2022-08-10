@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E5CBJV3T22"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E5CBJV3T22');
+</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="../imagenes/migla logo.jpg" type="image/x-icon">
+    <!-- CSS -->
+<link rel="stylesheet" href="../css/style.css">
+<!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/e90bc9afc6.js" crossorigin="anonymous"></script>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  
+</head>
+
+<body>
+<!-- HEADER NAV -->
+    <nav class="navbar  navbar-expand-lg navbar-light header " style=" background-color: rgba(255, 255, 255, 0.5);" >
+        <a class="navbar.brand header__transf" href="">
+            <img src="../imagenes/migla logo.jpg" alt="logo migla" class="header__logo ">
+         </a>
+        
+         <button class="navbar-toggler my-auto hamburg" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+            <span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse  justify-content-center " id="navbar">
+            <ul class="navbar-nav navEnlace  ">
+                <li class="nav-item">
+                    <a class="nav-link " href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Productos</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="Macetas.html">Macetas</a></li>
+                      <li><a class="dropdown-item" href="almohadones.html">Almohadones</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="productos.html">Ver todos los Productos</a></li>
+                    </ul>
+                  </li>
+             <li class="nav-item">
+                   <a class="nav-link" href="nosotras.html">Nosotras</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link active" href="contacto.html">Contacto</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="faqs.html">Preguntas Frecuentes</a>
+             </li>
+ 
+             <form class="form-inline navSearch">
+                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar Producto" aria-label="search">
+                 <button class="btn btn-outline-danger my-sm-0" type="submit">
+                    Buscar
+                </button>
+             </form>
+ 
+            </ul>
+        </div>
+    </nav>
+
+<main>
+<div class="gridcontacto">
+    <section class="pagecontacto"> 
+      <h1 class="pagecontacto__h1">ESCRIBINOS</h1>
+      <p >No dudes en ponerte en contacto </p>
+      <div class="redes"><a  href="http://www.instagram.com/migla.hogar/" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-instagram" class="instagram"></ion-icon></a>
+      <a href="http://www.facebook.com/migla.macetas/" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-facebook" class="facebook"></ion-icon></a></div>
+     </section>  
+    
+  <!-- FORMULARIO DE CONTACTO -->
+    <form action="" class="formulario">
+    <div>
+        <label for="nombre1" class="formulario__name">Nombre</label>
+        <div><input type="text" id="nombre1" placeholder="Ingrese su Nombre.."></div>
+    </div>
+    
+        <div>
+        <label for="mail2" class="formulario__name">Email</label>
+        <div><input type="text" id="mail2" placeholder="Ingrese su Email.."></div>
+       </div>
+    
+       <div>
+        <label for="tipo" class="formulario__name">Consulta</label>
+        <div>
+
+        <select name="tipo" id="tipo">
+        <option value="envios">Envios</option>
+        <option value="pedidos">Pedidos Personalizados</option>
+        <option value="cotizacion">Cotizacion</option>
+    
+    </select></div>
+    
+    </div>
+        <label for="comentarios" class="formulario__name">Comentarios</label>
+        <div>
+        <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Dejanos tu Comentario Aqui!"></textarea>
+
+        <div>
+        <label for="newslettler" class="newsletter">Le gustaria suscribirse a nuestros newslettler</label>
+        <input type="checkbox" name="" id="newslettler" class="newsletter__box">
+       </div>
+
+    </div>
+    
+    <div>
+        <button class="newsletter__boton">Enviar</button>
+        <input type="reset" value="Limpiar" class="newsletter__boton"> 
+
+    </div>
+    
+    </form>
+    <!-- GOOGLE MAPS -->
+    <div class="mapa"> <p > ENCONTRANOS AQUI!</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52393.16942487666!2d-58.50125931079461!3d-34.84182478188471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd1611663293d%3A0x469feaa50c39d67c!2sLeandro%20N.%20Alem%20325!5e0!3m2!1ses!2sar!4v1648476573142!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa__gps"></iframe>
+  </div>  
+</div>
+ 
+</main>  
+
+<footer >
+<!-- FOOTER -->
+    <div class="container-fluid">
+        <div class="row p-5 bg-dark text-white">
+           <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h2">Migla Hogar</p>
+            <ion-icon name="home-outline"></ion-icon>  
+         </div>     
+         <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h5 text-secondary">Redes Sociales</p>
+            <a href="http://www.instagram.com/migla.hogar/" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-instagram" class="redesInsta"></ion-icon></a>
+           <a href="http://www.facebook.com/migla.macetas/" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-facebook" class="redesFace"></ion-icon></a>
+         </div>    
+         <div class="col-xs-12 col-md-6 col-lg-3">
+           <p class="h5 text-secondary">Medios De Pago</p> 
+           <div class="pago">
+            <img src="../imagenes/visa.png" alt="logo visa" class="visa">
+            <img src="../imagenes/amex.png" alt="logo amex" class="amex">
+            <img src="../imagenes/tool.png" alt="logo mastercard" class="mast">
+          </div>
+         </div>      
+         <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h5 text-secondary">Contactanos</p>
+            <ul class="contacto list-unstyled">
+                <li><ion-icon name="call-outline"></ion-icon> 1137869536</li>
+                <li><ion-icon name="mail-open-outline"></ion-icon> info@miglahogar.com.ar</li>
+                <li><ion-icon name="pin-outline"></ion-icon> L.N Alem 325</li>
+             </ul>
+         </div>    
+        </div>
+
+ </footer>
+
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+ <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+
+</body>
+
+</html>
