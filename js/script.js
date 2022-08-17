@@ -56,7 +56,7 @@ botonBusqueda.addEventListener("click", () => {
 }*/
 
 //USANDO EL OPERADOR TERNARIO PARA CONSULTAR Y CREAR EL STORAGE
-let carritoStorage = (localStorage.getItem('carrito')) ? carrito = JSON.parse(localStorage.getItem('carrito')) : localStorage.setItem('carrrito', JSON.stringify(carrito))
+let carritoStorage = (localStorage.getItem('carrito')) ? carrito = JSON.parse(localStorage.getItem('carrito')) : localStorage.setItem('carrito', JSON.stringify(carrito))
 
 
 // inyectando html
@@ -91,55 +91,71 @@ productos.forEach(producto => {
                 },
                 onClick: function(){} // Callback after click
               }).showToast();
-            })
-       
+            })   
 })  
+
 // creando array y llmando al storage con los productos de mi carrito
-    const agregarAlCarrito = (productoId) => {
-        let item = productos.find((producto) => producto.id === productoId)
-        carrito.push(item)
-        console.log(carrito)
-   localStorage.setItem('carrito', JSON.stringify(carrito))
-    }
+const agregarAlCarrito = (productoId) => {
+    let item = productos.find((producto) => producto.id === productoId)
+    carrito.push(item)
+    console.log(carrito)
+localStorage.setItem('carrito', JSON.stringify(carrito))
+}
 
-    
 //inyectando html de mi carrito
-    botonCarrito.addEventListener("click", () =>{
-        let arrayStorage = JSON.parse(localStorage.getItem("carrito"))
-        divProductos.innerHTML = "",
-         
-        arrayStorage.forEach((carrito,indice) =>{
-
-            divProductos.innerHTML+=`
-
-            <div class="card mb-3" style="max-width: 540px;" id="carrito${indice}">
-              <div class="row g-0">
-                   <div class="col-md-4">
-                       <img src="${carrito.imagen}" class="img-fluid rounded-start" alt="...">
-                    </div>
-                  <div class="col-md-8">
-                      <div class="card-body">
-                         <h5 class="card-title">${carrito.nombre}</h5>
-                          <p class="card-text">${carrito.precio}</p>
-                         <button class="btn btn-danger"><ion-icon name="trash-outline"></ion-icon></button></button>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            `
-           
-           
-    })
-         
-       
-        // haciendo funcional el boton de eliminar, borrando productos del dom, array y storage
-        arrayStorage.forEach((carrito, indice) => {
-            let botonCarr = document.getElementById(`carrito${indice}`).lastElementChild.lastElementChild
-            botonCarr.addEventListener('click', () => {
-                document.getElementById(`carrito${indice}`).remove()
-                carrito.splice(indice,1)
-                localStorage.setItem('carrito', JSON.stringify(carrito))
-                console.log(`${carrito.nombre} Eliminada`)
-            })
+        botonCarrito.addEventListener("click", () =>{
+            let arrayStorage = JSON.parse(localStorage.getItem("carrito"))
+            divProductos.innerHTML = "",
+             
+            arrayStorage.forEach((carrit,indice) =>{
+    
+                divProductos.innerHTML+=`
+    
+                <div class="card mb-3" style="max-width: 540px;" id="carrit${indice}">
+                  <div class="row g-0">
+                       <div class="col-md-4">
+                           <img src="${carrit.imagen}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                      <div class="col-md-8">
+                          <div class="card-body">
+                             <h5 class="card-title">${carrit.nombre}</h5>
+                              <p class="card-text">${carrit.precio}</p>
+                             <button class="btn btn-danger"><ion-icon name="trash-outline"></ion-icon></button></button>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                `
+        })
+            // haciendo funcional el boton de eliminar, borrando productos del dom, array y storage
+            arrayStorage.forEach((carrit, indice) => {
+                let botonCarr = document.getElementById(`carrit${indice}`).lastElementChild.lastElementChild
+                botonCarr.addEventListener('click', () => {
+                    document.getElementById(`carrit${indice}`).remove()
+                   carrito.splice(indice,1)
+                   localStorage.setItem('carrito', JSON.stringify(carrito))
+                    console.log(`${carrit.nombre} Eliminada`)
+                })
+            }) 
         }) 
-    }) 
+
+// llamando a API de geolocalizacion para calcular costos de envio
+    const envios = document.getElementById("envios")
+ 
+    function Geolocalizacion(){
+      fetch("http://ipwho.is/?fields=country,region,city,postal")
+         .then(response => response.json())
+         .then(({country,region,city,postal}) => {
+
+            
+             Swal.fire({
+                title:'Su Cotizacion Aproximada a ',
+                text: `${country}, ${region}. Ciudad de ${city}, CP:${postal} es de: $800`,   
+    })
+
+})
+}
+
+envios.addEventListener("click", () => {
+    Geolocalizacion()
+})
