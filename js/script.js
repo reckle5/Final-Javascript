@@ -37,9 +37,8 @@ botonBusqueda.addEventListener("click", () => {
 
 
 //USANDO EL OPERADOR TERNARIO PARA CONSULTAR Y CREAR EL STORAGE
-let carritoStorage = (localStorage.getItem('carrito')) ? carrito = JSON.parse(localStorage.getItem('carrito')) : localStorage.setItem('carrito', JSON.stringify(carrito))
-
-//FUNCION PARA INYECTAR HTML
+let carritoStorage = (localStorage.getItem('carrito')) ? carrito = JSON.parse(localStorage.getItem('carrito')) : actualizarCarrito()
+    //FUNCION PARA INYECTAR HTML
 function inyectar(prod){
  prod.forEach(producto => {
         const div = document.createElement("div")
@@ -117,7 +116,7 @@ function actualizarCarrito(){
               <div class="col-md-8">
                   <div class="card-body">
                      <h5 class="card-title">${prod.nombre}</h5>
-                      <p class="card-text">${prod.precio}</p>
+                      <p class="card-text">$${prod.precio}</p>
                       <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
                      <button  onclick="eliminarCarrito(${prod.id})"class="btn btn-danger"><ion-icon name="trash-outline"></ion-icon></button></button>
                  </div>
