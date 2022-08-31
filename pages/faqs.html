@@ -65,6 +65,27 @@
                </button>
             </form>
            </ul>
+           
+           <button  class=" btn btn-outline-warning carrito-icono" id="botonCarrito"  data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa-solid fa-cart-shopping"></i></button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                <div class="modal-dialog">
+                  <div class="modal-content"  >
+                    <div class="modal-header">
+                      
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body"  id="contenedorCarrito">
+                      
+                    </div>
+                    <div class="card-footer bg-transparent border-success">  <p class="precioCarrito">Precio total: $<span id="precioTotal">0</span></p></div>
+                    <div class="modal-footer">
+                     
+                      <button type="button" class="btn  btn-outline-danger" data-bs-dismiss="modal" id="vaciarCarrito">Vaciar Carrito</button>
+                      <button type="button" class="btn btn-outline-success" id="finalizarCompra">Finalizar Compra</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
        </div>
    </nav>
   
