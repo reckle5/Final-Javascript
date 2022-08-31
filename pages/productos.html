@@ -44,15 +44,9 @@
                 <li class="nav-item">
                     <a class="nav-link " href="../index.html">Inicio</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Productos</a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="Macetas.html">Macetas</a></li>
-                      <li><a class="dropdown-item" href="almohadones.html">Almohadones</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="productos.html">Ver todos los Productos</a></li>
-                    </ul>
-                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="productos.html">Productos</a>
+            </li>
              
              <li class="nav-item">
                    <a class="nav-link" href="nosotras.html">Nosotras</a>
@@ -82,12 +76,14 @@
                       
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body"  id="divProductos">
+                    <div class="modal-body"  id="contenedorCarrito">
                       
                     </div>
+                    <div class="card-footer bg-transparent border-success">  <p class="precioCarrito">Precio total: $<span id="precioTotal">0</span></p></div>
                     <div class="modal-footer">
-                      <button type="button" class="btn  btn-outline-danger" data-bs-dismiss="modal">Seguir Comprando</button>
-                      <button type="button" class="btn btn-outline-success">Finalizar Compra</button>
+                     
+                      <button type="button" class="btn  btn-outline-danger" data-bs-dismiss="modal" id="vaciarCarrito">Vaciar Carrito</button>
+                      <button type="button" class="btn btn-outline-success" id="finalizarCompra">Finalizar Compra</button>
                     </div>
                   </div>
                 </div>
@@ -122,7 +118,8 @@
           <li><a class="dropdown-item" href="almohadones.html">Almohadones</a></li> 
         -->
          <li><button class="dropdown-item" id="macetas">Macetas</button> </li>
-         <li><p class="dropdown-item" id="almohadones">Almohadones</p></li>
+         <li><button class="dropdown-item" id="almohadones">Almohadones</button></li>
+         <li><button class="dropdown-item" id="todos">Todos los Productos</button></li>
         </ul>
       </div>
  

@@ -17,38 +17,34 @@ const input1 = document.getElementById("input1");
 const botonBusqueda = document.getElementById("botonBusqueda");
 const botonCarrito= document.getElementById("botonCarrito");
 const miCarrito = document.getElementById("miCarrito");
-const divProductos = document.getElementById("divProductos");
+const contenedorCarrito = document.getElementById("contenedorCarrito");
 const misProductos = document.getElementById("misProductos");
 const cantidad = document.getElementById("cantidad");
 const envios = document.getElementById("envios");
+const prodMaceta = document.getElementById("macetas")
+const prodAlmohadon = document.getElementById("almohadones")
+const prodTodos = document.getElementById("todos");
+const almohadon = productos.filter ( (almo) => almo.prod === "almohadon");
+const maceta = productos.filter((maceta) => maceta.prod === "maceta");
+const vaciarCarrito = document.getElementById("vaciarCarrito");
+const precioTotal = document.getElementById("precioTotal");
+const finalizarCompra = document.getElementById("finalizarCompra");
 
-// boton Busqueda
+//BOTON DE BUSQUEDA
 botonBusqueda.addEventListener("click", () => {
     console.log(input1.value);
 })
 
 
-// consultado y creando storage
-/*if(localStorage.getItem('carrito')) {
-    carrito = JSON.parse(localStorage.getItem('carrito'))
-} else {
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-}*/
-
 //USANDO EL OPERADOR TERNARIO PARA CONSULTAR Y CREAR EL STORAGE
 let carritoStorage = (localStorage.getItem('carrito')) ? carrito = JSON.parse(localStorage.getItem('carrito')) : localStorage.setItem('carrito', JSON.stringify(carrito))
-const mace = document.getElementById("macetas")
 
-
-const existe = productos.filter((maceta) => maceta.prod === "maceta") 
-
-
-// inyectando html
-
+//FUNCION PARA INYECTAR HTML
 function inyectar(prod){
  prod.forEach(producto => {
         const div = document.createElement("div")
         div.classList.add("productos")
+        div.innerHTML = ""
         div.innerHTML = `
         <div class="card " style="width: 18rem;">
         <div class="img-productos"><img src="${producto.imagen}" class="card-img-top img-productos" alt=""></div>
@@ -61,6 +57,7 @@ function inyectar(prod){
     
             `
             misProductos.appendChild(div)
+
             const boton = document.getElementById(`agregar${producto.id}`)
             boton.addEventListener("click", () => agregarAlCarrito(producto.id))
             boton.addEventListener("click", () => {
@@ -81,27 +78,36 @@ function inyectar(prod){
     })  
 }
 
-const existe2 = productos.filter ( (almo) => almo.prod === "almohadon")
-console.log(existe)
-mace.addEventListener("click", () => {
-    inyectar(existe2)
+
+// Agregando Evento a las opciones de productos para que se modifique el DOM 
+
+
+inyectar(productos)
+
+prodMaceta.addEventListener("click", ()=>{
+    misProductos.innerHTML =""
+    inyectar(maceta)
 })
-function eliminarCarrito(prodId){
-    const item = carrito.find((prod) => prod.id === prodId)
 
-    const indice = carrito.indexOf(item) 
+prodAlmohadon.addEventListener("click",()=>{
+    misProductos.innerHTML =""
+    inyectar(almohadon)
+})
 
-    carrito.splice(indice, 1) 
-    actualizarCarrito() 
-   
-}
+prodTodos.addEventListener("click",()=>{
+    misProductos.innerHTML =""
+    inyectar(productos)
+})
 
+//FUNCION PARA ACTUALIZAR EL DOM Y EL LOCAL STORAGE
 function actualizarCarrito(){
 
-    divProductos.innerHTML = "",
+    contenedorCarrito.innerHTML = ""
 
     carrito.forEach((prod)=>{
-        divProductos.innerHTML+=`
+        const div = document.createElement("div")
+        div.className = ("productoEnCarrito")
+        div.innerHTML=`
     
         <div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
@@ -115,26 +121,37 @@ function actualizarCarrito(){
                       <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
                      <button  onclick="eliminarCarrito(${prod.id})"class="btn btn-danger"><ion-icon name="trash-outline"></ion-icon></button></button>
                  </div>
+               
               </div>
            </div>
         </div>
         `
+        contenedorCarrito.appendChild(div)
+
         localStorage.setItem('carrito', JSON.stringify(carrito))
 
     })
 }
 
+//FUNCION PARA ELIMINAR UN PRODUCTOS DEL CARRITO
+function eliminarCarrito(prodId){
+    const item = carrito.find((prod) => prod.id === prodId)
 
-// creando array y llmando al storage con los productos de mi carrito
-function agregarAlCarrito(productoId) {
+    const indice = carrito.indexOf(item) 
+
+    carrito.splice(indice, 1) 
+    actualizarCarrito() 
    
+}
 
+//CREANDO ARRAY Y LLAMANDO AL STORAGE CON LOS PRODUCTOS DE MI CARRITO 
+function agregarAlCarrito(productoId) {
     const existe = carrito.some((producto) => producto.id === productoId)
 
     if(existe){
         const producto = carrito.map(producto =>{
             if(producto.id === productoId){
-               producto.cantidad++
+               producto.cantidad++  // SI EL PRODUCTO YA SE ENCUENTA EN MI ARRAY AUMENTA LA CANTIDAD SIN REPETIR EL PROD EN EL DOM
             }
         })
 }else{
@@ -144,10 +161,37 @@ function agregarAlCarrito(productoId) {
 actualizarCarrito()
 }
 
+//POR CADA PROD QUE RECORRO EN EL CARRITO, AL ACUMULADOR LE SUMA LA PROPIEDAD PRECIO
+precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
+
+
+//Vaciar carrito
+function vaciar() {
+    carrito.length = 0
+    precioTotal.innerText = 0
+    localStorage.clear
+    actualizarCarrito()
+    }
+
+vaciarCarrito.addEventListener("click", () =>{
+    vaciar()
+})
+
+//ALERTA DE COMPRA REALIZADA
+finalizarCompra.addEventListener("click", ()=>{
+    Swal.fire({
+       icon:'success',
+       title: 'Su compra ha sido realizada con existo'
+     })
+     vaciar()
+    
+})
+
 botonCarrito.addEventListener("click", actualizarCarrito())
-//inyectando html de mi carrito
+
+
    
-// llamando a API de geolocalizacion para calcular costos de envio
+// LLAMANDO A LA API DE GEOLOCALIZACION PARA CALCULAR COSTOS DE ENVIO
     function Geolocalizacion(){
       fetch("http://ipwho.is/?fields=country,region,city,postal")
          .then(response => response.json())
