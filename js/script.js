@@ -37,7 +37,8 @@ botonBusqueda.addEventListener("click", () => {
 
 
 //USANDO EL OPERADOR TERNARIO PARA CONSULTAR Y CREAR EL STORAGE
-let carritoStorage = (localStorage.getItem('carrito')) ? carrito = JSON.parse(localStorage.getItem('carrito')) : actualizarCarrito()
+let carritoStorage = (localStorage.getItem('carrito')) ? carrito = JSON.parse(localStorage.getItem('carrito')) : localStorage.setItem('carrito', JSON.stringify(carrito))
+
     //FUNCION PARA INYECTAR HTML
 function inyectar(prod){
  prod.forEach(producto => {
@@ -133,7 +134,7 @@ function actualizarCarrito(){
 }
 
 //FUNCION PARA ELIMINAR UN PRODUCTOS DEL CARRITO
-function eliminarCarrito(prodId){
+const eliminarCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
 
     const indice = carrito.indexOf(item) 
@@ -168,7 +169,7 @@ precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod
 function vaciar() {
     carrito.length = 0
     precioTotal.innerText = 0
-    localStorage.clear
+    
     actualizarCarrito()
     }
 
@@ -188,7 +189,7 @@ finalizarCompra.addEventListener("click", ()=>{
 
 botonCarrito.addEventListener("click", actualizarCarrito())
 
-
+console.table(carrito)
    
 // LLAMANDO A LA API DE GEOLOCALIZACION PARA CALCULAR COSTOS DE ENVIO
     function Geolocalizacion(){
